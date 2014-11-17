@@ -16,12 +16,13 @@ angular.module('workspaceApp')
 
     // provide a method for adding a message
     $scope.addMessage = function(newMessage) {
-      if( newMessage ) {
+        console.log(newMessage);
+      /*if( newMessage ) {
         // push a message to the end of the array
         $scope.messages.$add({text: newMessage})
           // display any errors
           .catch(alert);
-      }
+      }*/
     };
 
     function alert(msg) {

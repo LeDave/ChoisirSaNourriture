@@ -16,5 +16,6 @@ angular.module('workspaceApp', [
     'ngSanitize',
     'ngTouch',
     'firebase',
-    'firebase.utils'
+    'firebase.utils',
+    'ngGrid'
   ]);
