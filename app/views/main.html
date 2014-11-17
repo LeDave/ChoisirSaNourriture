@@ -6,6 +6,19 @@
     <button type="submit" ng-click="addProduct(newProduct);newProduct = null;">send</button>
 </form>
 
-<div class="gridStyle" ng-grid="gridOptions"></div>
+<div id="results">
+    <section ng-repeat="product in products" class="result-part">
+        <img id="result-thumb" class="pull-left" src="{{product.image_small_url}}">
+        <h3><a href="#" class="view-detail">{{product.product_name}}</a></h3>
+        <p class="short-desc pull-left">{{product.ingredients_text}}</p>
+        <p class="short-desc pull-left">{{product.nutrition_score_debug}}</p>
+        <ul>
+            <li ng-repeat="(key, val) in product.additives_tags">{{val | split:':':1}}</li>
+        </ul>
+        <div class="price-avail pull-right">
+            <button class="btn btn-success">Details</button>
+        </div>
+    </section>
+</div>
 
 <p class="alert alert-danger" ng-show="err">{{err}}</p>

@@ -34,7 +34,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    /*max-width: 730px;*/
   }
 }
 .container-narrow > hr {
@@ -78,7 +78,8 @@ body {
   }
 }
 
-.gridStyle {
-    width: 100%; 
-    height: 500px;
-}
+.short-desc {max-width: 50%}
+#result-thumb {height:auto; width:90px}
+#results section {border-bottom: 1px solid #666}
+.result-part {margin:10px; overflow:hidden; padding-bottom:5px}
+
