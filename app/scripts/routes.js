@@ -17,15 +17,5 @@ angular.module('workspaceApp')
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-
-      .when('/chat', {
-        templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
-      })
-
-      .when('/chat', {
-        templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
-      })
       .otherwise({redirectTo: '/'});
   }]);

@@ -17,7 +17,8 @@ angular.module('workspaceApp', [
     'ngTouch',
     'firebase',
     'firebase.utils',
-    'ngGrid'
+    'ngGrid',
+    'ngCrossfilter'
   ])
     .filter('split', function() {
         return function(input, splitChar, splitIndex) {

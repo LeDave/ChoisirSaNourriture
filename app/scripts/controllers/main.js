@@ -6,11 +6,12 @@
  * # MainCtrl
  * Controller of the workspaceApp
  */
-angular.module('workspaceApp').controller('MainCtrl', function($scope, fbutil, $timeout) {
+angular.module('workspaceApp').controller('MainCtrl', function($scope, fbutil, $timeout, Crossfilter) {
     // synchronize a read-only, synchronized array of products, limit to most recent 10
     $scope.products = fbutil.syncArray('products', {
-        limit: 10
+        limit: 500
     });
+    
     // display any errors
     $scope.products.$loaded().catch(alert);
     // provide a method for adding a message
@@ -25,12 +26,6 @@ angular.module('workspaceApp').controller('MainCtrl', function($scope, fbutil, $
     $scope.filterOptions = {
         filterText: ''
       };
-    $scope.gridOptions = { data: 'products',
-        filterOptions: $scope.filterOptions,
-        showGroupPanel: true,
-        jqueryUIDraggable: true,
-        columnDefs: [{field:'product_name', displayName:'Produit'}, {field:'brands'},{field:'additives_tags'}]
- };
 
     function alert(msg) {
         $scope.err = msg;

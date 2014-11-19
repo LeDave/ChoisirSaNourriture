@@ -5,16 +5,17 @@
     <textarea ng-model="newProduct"></textarea>
     <button type="submit" ng-click="addProduct(newProduct);newProduct = null;">send</button>
 </form>
-
+<input type="text" ng-model="search">
 <div id="results">
-    <section ng-repeat="product in products" class="result-part">
+    <section ng-repeat="product in products | filter:search" class="result-part">
         <img id="result-thumb" class="pull-left" src="{{product.image_small_url}}">
         <h3><a href="#" class="view-detail">{{product.product_name}}</a></h3>
         <p class="short-desc pull-left">{{product.ingredients_text}}</p>
         <p class="short-desc pull-left">{{product.nutrition_score_debug}}</p>
-        <ul>
+        <p class="short-desc pull-left">{{product.additives_tags}}</p>
+        <!--<ul>
             <li ng-repeat="(key, val) in product.additives_tags">{{val | split:':':1}}</li>
-        </ul>
+        </ul> -->
         <div class="price-avail pull-right">
             <button class="btn btn-success">Details</button>
         </div>
